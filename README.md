@@ -10,13 +10,14 @@ We propose a content-aware adaptive grid refinement method for robust homography
 
 ### RoMa Matching Results
 
-![RoMa Matching Results](images/match_roma.png)
+![RoMa Matching Results]<img width="2000" height="1000" alt="match_roma" src="https://github.com/user-attachments/assets/bd4b20ec-01b5-4466-961d-e213d477472b" />
 
 *Feature matching results obtained using RoMa.*
 
 ### Our Method
 
-![Matching Results](images/match.png)
+![Matching Results](images/match.png)<img width="2000" height="1000" alt="match" src="https://github.com/user-attachments/assets/66161a4f-05e0-4fd2-bc12-96357bf57bb9" />
+
 
 *Feature matching results of our method.*
 
@@ -72,12 +73,3 @@ The complete implementation, pretrained models, and evaluation scripts will be r
 ## Citation
 
 If you find this work useful, please consider citing our paper.
-
-```bibtex
-@article{adaptive_grid_refinement,
-  title={Content-Aware Adaptive Grid Refinement for Robust Homography Estimation},
-  author={Anonymous},
-  journal={Under Review},
-  year={2026}
-}
-```
