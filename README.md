@@ -10,20 +10,18 @@ We propose a content-aware adaptive grid refinement method for robust homography
 
 ### RoMa Matching Results
 
-![RoMa Matching Results]<img width="2000" height="1000" alt="match_roma" src="https://github.com/user-attachments/assets/bd4b20ec-01b5-4466-961d-e213d477472b" />
+<img width="2000" height="1000" alt="match_roma" src="https://github.com/user-attachments/assets/bd4b20ec-01b5-4466-961d-e213d477472b" />
 
 *Feature matching results obtained using RoMa.*
 
 ### Our Method
 
-![Matching Results](images/match.png)<img width="2000" height="1000" alt="match" src="https://github.com/user-attachments/assets/66161a4f-05e0-4fd2-bc12-96357bf57bb9" />
+<img width="2000" height="1000" alt="match" src="https://github.com/user-attachments/assets/66161a4f-05e0-4fd2-bc12-96357bf57bb9" />
 
 
 *Feature matching results of our method.*
 
 ## Network Architecture
-
-![Network Architecture](images/network.png)
 
 *Overview of the proposed content-aware adaptive grid refinement framework.*
 
@@ -32,36 +30,18 @@ We propose a content-aware adaptive grid refinement method for robust homography
 The network implementation will be released soon.
 
 ```python
-import torch
-import torch.nn as nn
+Algorithm: Adaptive Grid Refinement for Homography Estimation
 
-class AdaptiveGridRefinement(nn.Module):
-    """
-    Content-aware adaptive grid refinement module
-    for robust homography estimation.
-    """
+Input: Image pair (I1, I2)
+Output: Homography matrix H
 
-    def __init__(self, in_channels=128, hidden_channels=64):
-        super().__init__()
-
-        self.feature_extractor = nn.Sequential(
-            nn.Conv2d(in_channels, hidden_channels, 3, padding=1),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(hidden_channels, hidden_channels, 3, padding=1),
-            nn.ReLU(inplace=True),
-        )
-
-        self.grid_refinement = nn.Conv2d(
-            hidden_channels, 2, kernel_size=3, padding=1
-        )
-
-    def forward(self, features):
-        refined_features = self.feature_extractor(features)
-        grid_offsets = self.grid_refinement(refined_features)
-        return grid_offsets
-
-# Note: This is an illustrative module, not the complete
-# homography estimation network.
+1. Extract features from I1 and I2
+2. Match features between two images
+3. Estimate an initial homography H
+4. Construct an adaptive grid based on image content
+5. Refine grid points using matching information
+6. Re-estimate H using refined correspondences
+7. Return H
 ```
 
 ## Code
